@@ -134,3 +134,70 @@ public class Main {
 ```
 
 This example demonstrates the basic operations of the `Deque` class, including insertion, deletion, and retrieval of elements.
+
+# Duplicates
+
+## Overview
+
+The `Duplicates` class provides a method to check if an array of integers contains any duplicate elements.
+It uses the merge sort algorithm to sort the array and then checks for duplicates by comparing adjacent elements.
+
+## Idea
+In order to avoid using any features that would require Collections,
+I opted for a simple approach that would sort the array and then check for duplicates.
+For the sorting algorithm I had multiple options such as a simple double for loop, Bubble Sort, Quick Sort, Merge Sort, etc.
+I chose Merge Sort as it is a stable sorting algorithm with a time complexity of O(n log n).
+After sorting the array, I simply checked for duplicates by comparing adjacent elements.
+
+## Features
+
+- **Check for Duplicates**: The main functionality of the `Duplicates` class is to determine if an array contains any duplicate elements.
+
+## Usage
+
+### Initialization
+
+The `Duplicates` class does not require instantiation as it provides a static method.
+
+### Checking for Duplicates
+
+To check if an array contains duplicates, use the `hasDuplicates` method:
+
+```java
+int[] array = {1, 2, 3, 4, 5};
+boolean result = Duplicates.hasDuplicates(array);
+System.out.println("Contains duplicates: " + result); // Output: Contains duplicates: false
+```
+
+### Method Details
+
+#### `hasDuplicates`
+
+```java
+public static boolean hasDuplicates(int[] arr)
+```
+
+- **Parameters**:
+  - `arr`: An array of integers to be checked for duplicates.
+- **Returns**:
+  - `true` if the array contains duplicate elements, `false` otherwise.
+- **Description**:
+  - This method first checks if the array is null or has fewer than two elements, in which case it returns `false` as there can't be any duplicates.
+  - It then sorts the array using the `MergeSort` class and checks for duplicates by comparing adjacent elements.
+
+## Example
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int[] array1 = {1, 2, 3, 4, 5};
+        int[] array2 = {1, 2, 3, 3, 4, 5};
+
+        System.out.println("Array1 contains duplicates: " + Duplicates.hasDuplicates(array1)); // Output: false
+        System.out.println("Array2 contains duplicates: " + Duplicates.hasDuplicates(array2)); // Output: true
+    }
+}
+```
+
+This example demonstrates how to use the `Duplicates` class to check if arrays contain duplicate elements.
+
