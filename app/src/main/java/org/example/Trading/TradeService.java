@@ -8,7 +8,7 @@ public class TradeService {
 
     private static final Logger logger = Logger.getLogger(TradeService.class.getName());
 
-    public void printMarketFirstLastPrices(Iterator<Trade> trades) {
+    public void printMarketOpenClosePrices(Iterator<Trade> trades) {
         if (trades == null || !trades.hasNext()) {
             throw new NullPointerException("Trades iterator is null or empty");
         }
