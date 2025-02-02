@@ -24,18 +24,18 @@ public class TradeServiceTest {
         tradeService.printMarketOpenClosePrices(trades.iterator());
     }
 
-    @Test
+    @Test(expectedExceptions = NullPointerException.class)
     public void printMarketOpenClosePrices_EmptyTrades_ThrowsNullPointerException() {
         List<Trade> trades = Collections.emptyList();
 
         TradeService tradeService = new TradeService();
-        assertThrows(NullPointerException.class, () -> tradeService.printMarketOpenClosePrices(trades.iterator()));
+        tradeService.printMarketOpenClosePrices(trades.iterator());
     }
 
-    @Test
+    @Test(expectedExceptions = NullPointerException.class)
     public void printMarketOpenClosePrices_NullTrades_ThrowsNullPointerException() {
         TradeService tradeService = new TradeService();
-        assertThrows(NullPointerException.class, () -> tradeService.printMarketOpenClosePrices(null));
+        tradeService.printMarketOpenClosePrices(null);
     }
 
     @Test
